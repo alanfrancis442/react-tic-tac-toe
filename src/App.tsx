@@ -6,7 +6,7 @@ function App() {
   const [isuser1, setisuser1] = useState(true)
   
   const [display, setdisplay] = useState([["","",""],["","",""],["","",""]])
-  const handleClick = (e:MouseEvent,i,j)=>{
+  const handleClick = (i,j)=>{
     let temp = [...display]
     if(isuser1&&display[i][j]==""){
       temp[i][j] = 'X'
@@ -53,7 +53,7 @@ function App() {
           {rows.map((element,i) => {
             return element.map((e,j)=>{
               return (
-                <div onClick={(event)=>{handleClick(event,i,j), checkWinner()}} key={j} className="bg-blue-600 hover:bg-blue-800 transition-all duration-300 text-white text-2xl font-bold w-16 sm:w-32 h-16 sm:h-32 flex items-center justify-center rounded-md
+                <div onClick={(event)=>{handleClick(i,j), checkWinner()}} key={j} className="bg-blue-600 hover:bg-blue-800 transition-all duration-300 text-white text-2xl font-bold w-16 sm:w-32 h-16 sm:h-32 flex items-center justify-center rounded-md
                 ">
               {display[i][j]}
             </div>)
